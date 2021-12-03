@@ -14,24 +14,24 @@
   color: black;
 }
 
-.game-interface .column-color-red {
+.game-interface .column {
+  height: 30vh;
+}
+
+.game-interface .color-red {
   background-color: #ed5c4e;
-  height: 30vh;
 }
 
-.game-interface .column-color-green {
+.game-interface .color-green {
   background-color: #4eedac;
-  height: 30vh;
 }
 
-.game-interface .column-color-blue {
+.game-interface .color-blue {
   background-color: #4e90ed;
-  height: 30vh;
 }
 
-.game-interface .column-color-yellow {
+.game-interface .color-yellow {
   background-color: #ede44e;
-  height: 30vh;
 }
 
 * {
