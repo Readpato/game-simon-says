@@ -1,0 +1,18 @@
+.game-interface {
+  .column-color-red {
+    background-color: $colorRed;
+    height: 30vh;
+  }
+  .column-color-green {
+    background-color: $colorGreen;
+    height: 30vh;
+  }
+  .column-color-blue {
+    background-color: $colorBlue;
+    height: 30vh;
+  }
+  .column-color-yellow {
+    background-color: $colorYellow;
+    height: 30vh;
+  }
+}
