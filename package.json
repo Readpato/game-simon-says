@@ -1,0 +1,27 @@
+{
+  "name": "game-simon-says",
+  "version": "1.0.0",
+  "description": "The classical Simon Says game created with code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Readpato/game-simon-says.git"
+  },
+  "keywords": [
+    "simon",
+    "says",
+    "game"
+  ],
+  "author": "Patrick Raedler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Readpato/game-simon-says/issues"
+  },
+  "homepage": "https://github.com/Readpato/game-simon-says#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
