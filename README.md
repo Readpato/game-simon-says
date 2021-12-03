@@ -18,7 +18,6 @@ For this project the technologies and tools used were:
 As this project runs with bootstrap you have to run this code snippet to properly use it.
 
 ```
-npm init
 npm install
 ```
 
