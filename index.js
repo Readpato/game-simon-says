@@ -89,20 +89,20 @@ function highlight($colorbox) {
 */
 
 let userSequence = [];
-let computerSequence = [];
+let machineSequence = [];
 let round = 0;
 
-document.querySelector('.start-game-button').onclick = startGame();
+document.querySelector('.start-game-button').onclick = startGame;
 
 blockUserInput();
 updateStatusBarText("The game hasn't started yet! Press Play!");
-updateRoundNumber(round);
+updateRoundNumber("-");
 
 
 function blockUserInput() {
     const $colorBox = document.querySelectorAll('.color-box').forEach(function($colorBox){
         $colorBox.onclick = function(){
-            console.log('Hello, there!');
+        console.log('Hello, there!');
         }
     });
 }
@@ -114,8 +114,46 @@ function updateStatusBarText(textContent) {
 
 function updateRoundNumber(round) {
     $roundNumber = document.querySelector('.round');
-    $roundNumber.textContent = round;
+    return $roundNumber.textContent = round;
 }
 
 function startGame() {
+    // resetStats();
+    handleRound();
+
 }
+
+function resetStats() {
+    userSequence = [];
+    machineSequence = [];
+}
+
+function handleRound() {
+    updateStatusBarText('Computer Turn');
+
+    let $newColorBox = selectRandomColor();
+    machineSequence.push($newColorBox);
+
+    machineSequence.forEach(function($colorBox, index){
+        const MS_DELAY = (index + 1) * 1000;
+        setTimeout(function() {
+            highlightBox($colorBox)
+        }, MS_DELAY)
+    });
+
+
+};
+
+
+
+function selectRandomColor() {
+    const $colorBox = document.querySelectorAll('.color-box');
+    let randomNumber = Math.floor(Math.random()*4);
+    return $colorBox[randomNumber];
+};
+
+function highlightBox($colorBox){
+    $colorBox.style.opacity = 1;
+    setTimeout(function(){$colorBox.style.opacity = 0.5;
+    }, 500)
+};
