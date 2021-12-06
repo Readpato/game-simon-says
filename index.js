@@ -14,9 +14,12 @@ When the turn of the player comes, the previous sequence needs to be deleted.
 Creation Process:
 
 1- When the button is pressed the game has to start so: 
+
+let userSequence = [];
+let machineSequence = [];
+let round = 0;
+
 document.querySelector(".start-game-button").onclick = function() {
-    let userSequence = [];
-    let machineSequence = [];
     
     blockUserInput();
     machineTurn();
@@ -85,4 +88,34 @@ function highlight($colorbox) {
 
 */
 
+let userSequence = [];
+let computerSequence = [];
+let round = 0;
 
+document.querySelector('.start-game-button').onclick = startGame();
+
+blockUserInput();
+updateStatusBarText("The game hasn't started yet! Press Play!");
+updateRoundNumber(round);
+
+
+function blockUserInput() {
+    const $colorBox = document.querySelectorAll('.color-box').forEach(function($colorBox){
+        $colorBox.onclick = function(){
+            console.log('Hello, there!');
+        }
+    });
+}
+
+function updateStatusBarText(textContent) {
+    $statusBar = document.querySelector('.status-bar-text');
+    $statusBar.textContent = textContent; 
+}
+
+function updateRoundNumber(round) {
+    $roundNumber = document.querySelector('.round');
+    $roundNumber.textContent = round;
+}
+
+function startGame() {
+}

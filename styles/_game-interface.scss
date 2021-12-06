@@ -1,6 +1,8 @@
 .game-interface {
   .column {
     height: 30vh;
+    opacity: 0.7;
+    transition: opacity ease-in-out 5s;
   }
 
   .color-red {

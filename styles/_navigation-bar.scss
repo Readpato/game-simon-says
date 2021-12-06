@@ -6,6 +6,10 @@
 
   .status-bar {
     text-align: center;
+
+    .status-bar-text {
+      margin: 0;
+    }
   }
 
   .start-game-button {

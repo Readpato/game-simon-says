@@ -8,6 +8,10 @@
   text-align: center;
 }
 
+.navigation-bar .status-bar .status-bar-text {
+  margin: 0;
+}
+
 .navigation-bar .start-game-button {
   background-color: #ade6bb;
   border: none;
@@ -16,6 +20,9 @@
 
 .game-interface .column {
   height: 30vh;
+  opacity: 0.7;
+  -webkit-transition: opacity ease-in-out 5s;
+  transition: opacity ease-in-out 5s;
 }
 
 .game-interface .color-red {
