@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules\bootstrap\dist\css\bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+
+    <title>Simon Says Game</title>
+  </head>
+  <body>
+    <nav class="navigation-bar container">
+      <div class="row">
+        <div class="col-sm-6 status-bar">
+          <div class="alert alert-primary status-bar" role="alert">
+            The game hasn't started yet! Press Play!
+          </div>
+        </div>
+        <div
+          class="
+            col-sm
+            round-counter
+            d-flex
+            justify-content-center
+            align-content-center align-self-center
+          "
+        >
+          Round: #<span class="round-number"></span>
+        </div>
+        <div
+          class="
+            col-sm
+            button-wrapper
+            d-flex
+            justify-content-center
+            align-content-center align-self-center
+          "
+        >
+          <button type="button" class="btn btn-success start-game-button">
+            Play!
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container overflow-hidden game-interface">
+      <div class="row g-3">
+        <div class="col-6">
+          <div class="p-3 column color1 color-red">A</div>
+        </div>
+        <div class="col-6">
+          <div class="p-3 column color2 color-green">B</div>
+        </div>
+        <div class="col-6">
+          <div class="p-3 column color3 color-blue">C</div>
+        </div>
+        <div class="col-6">
+          <div class="p-3 column color4 color-yellow">D</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

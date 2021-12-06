@@ -1,0 +1,49 @@
+/* Colors */
+.navigation-bar .alert-primary {
+  background-color: #e6add8;
+  border: none;
+}
+
+.navigation-bar .status-bar {
+  text-align: center;
+}
+
+.navigation-bar .start-game-button {
+  background-color: #ade6bb;
+  border: none;
+  color: black;
+}
+
+.game-interface .column {
+  height: 30vh;
+}
+
+.game-interface .color-red {
+  background-color: #ed5c4e;
+}
+
+.game-interface .color-green {
+  background-color: #4eedac;
+}
+
+.game-interface .color-blue {
+  background-color: #4e90ed;
+}
+
+.game-interface .color-yellow {
+  background-color: #ede44e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #add8e6;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+/*# sourceMappingURL=style.css.map */
