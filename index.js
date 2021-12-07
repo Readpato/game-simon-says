@@ -105,34 +105,36 @@ function blockUserInput() {
         console.log('Hello, there!');
         }
     });
-}
+};
 
 function updateStatusBarText(textContent) {
     $statusBar = document.querySelector('.status-bar-text');
     $statusBar.textContent = textContent; 
-}
+};
 
 function updateRoundNumber(round) {
     $roundNumber = document.querySelector('.round');
     return $roundNumber.textContent = round;
-}
+};
 
 function startGame() {
     // resetStats();
     handleRound();
-
-}
+};
 
 function resetStats() {
     userSequence = [];
     machineSequence = [];
-}
+};
 
 function handleRound() {
-    updateStatusBarText('Computer Turn');
+    updateStatusBarText('Computer Turn!');
+    blockUserInput();
 
     let $newColorBox = selectRandomColor();
     machineSequence.push($newColorBox);
+
+    const USER_DELAY = (machineSequence.length + 1) * 1000;
 
     machineSequence.forEach(function($colorBox, index){
         const MS_DELAY = (index + 1) * 1000;
@@ -141,10 +143,14 @@ function handleRound() {
         }, MS_DELAY)
     });
 
+    setTimeout(function() {
+        updateStatusBarText('Your turn!');
+        unblockUserInput();
+    }, USER_DELAY)
+
+    
 
 };
-
-
 
 function selectRandomColor() {
     const $colorBox = document.querySelectorAll('.color-box');
@@ -154,6 +160,19 @@ function selectRandomColor() {
 
 function highlightBox($colorBox){
     $colorBox.style.opacity = 1;
-    setTimeout(function(){$colorBox.style.opacity = 0.5;
+    setTimeout(function(){
+        $colorBox.style.opacity = 0.5;
     }, 500)
+};
+
+function unblockUserInput() {
+    const $colorBox = document.querySelectorAll('.color-box').forEach(function($colorBox) {
+    $colorBox.onclick = handleUserInput;
+    });
+}
+
+function handleUserInput(event) {
+    const $colorBox = event.target;
+    highlightBox($colorBox);
+    userSequence.push($colorBox);
 };
