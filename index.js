@@ -118,7 +118,7 @@ function updateRoundNumber(round) {
 };
 
 function startGame() {
-    // resetStats();
+    resetStats();
     handleRound();
 };
 
@@ -146,9 +146,8 @@ function handleRound() {
     setTimeout(function() {
         updateStatusBarText('Your turn!');
         unblockUserInput();
+        userSequence = [];
     }, USER_DELAY)
-
-    
 
 };
 
@@ -172,7 +171,25 @@ function unblockUserInput() {
 }
 
 function handleUserInput(event) {
+
     const $colorBox = event.target;
     highlightBox($colorBox);
     userSequence.push($colorBox);
+
+    $machineColorBox = machineSequence[userSequence.length - 1]; //Give me the last box that was selected
+
+    if ($colorBox.id != $machineColorBox.id) {
+        lostGame();
+        return;
+    };
+
+    if (userSequence.length === machineSequence.length) {
+        setTimeout(function(){
+            handleRound();
+        }, 1000);
+    }
 };
+
+function lostGame() {
+    updateStatusBarText('You lost the game. Start again!');
+}
