@@ -1,11 +1,10 @@
 /* Colors */
 .navigation-bar .alert-primary {
-  background-color: #e6add8;
   border: none;
 }
 
 .navigation-bar .status-bar {
-  text-align: center;
+  border: none;
 }
 
 .navigation-bar .status-bar .status-bar-text {
