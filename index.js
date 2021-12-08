@@ -96,14 +96,13 @@ document.querySelector('.start-game-button').onclick = startGame;
 
 blockUserInput();
 updateStatusBarText("The game hasn't started yet! Press Play!");
-updateRoundNumber("-");
+updateRoundNumber(round);
 
 
 function blockUserInput() {
     const $colorBox = document.querySelectorAll('.color-box').forEach(function($colorBox){
         $colorBox.onclick = function(){
-        console.log('Hello, there!');
-        }
+        };
     });
 };
 
@@ -123,13 +122,17 @@ function startGame() {
 };
 
 function resetStats() {
+    round = 0;
     userSequence = [];
     machineSequence = [];
+    updateRoundNumber(round);
 };
 
 function handleRound() {
     updateStatusBarText('Computer Turn!');
     blockUserInput();
+    round++;
+    updateRoundNumber(round);
 
     let $newColorBox = selectRandomColor();
     machineSequence.push($newColorBox);
@@ -153,8 +156,8 @@ function handleRound() {
 
 function selectRandomColor() {
     const $colorBox = document.querySelectorAll('.color-box');
-    let randomNumber = Math.floor(Math.random()*4);
-    return $colorBox[randomNumber];
+    let RANDOM_NUMBER = Math.floor(Math.random() * $colorBox.length);
+    return $colorBox[RANDOM_NUMBER];
 };
 
 function highlightBox($colorBox){
@@ -186,8 +189,8 @@ function handleUserInput(event) {
     if (userSequence.length === machineSequence.length) {
         setTimeout(function(){
             handleRound();
-        }, 1000);
-    }
+        }, 500);
+    };
 };
 
 function lostGame() {
