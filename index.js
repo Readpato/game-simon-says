@@ -106,8 +106,15 @@ function blockUserInput() {
     });
 };
 
-function updateStatusBarText(textContent) {
+function updateStatusBarText(textContent, error = false) {
     $statusBar = document.querySelector('.status-bar-text');
+    if (error) {
+        document.querySelector('.status-bar').classList.remove('alert-primary');
+        document.querySelector('.status-bar').classList.add('alert-danger');
+    } else {
+        document.querySelector('.status-bar').classList.remove('alert-danger');
+        document.querySelector('.status-bar').classList.add('alert-primary');
+    };
     $statusBar.textContent = textContent; 
 };
 
@@ -164,7 +171,7 @@ function highlightBox($colorBox){
     $colorBox.style.opacity = 1;
     setTimeout(function(){
         $colorBox.style.opacity = 0.5;
-    }, 500)
+    }, 500);
 };
 
 function unblockUserInput() {
@@ -194,5 +201,5 @@ function handleUserInput(event) {
 };
 
 function lostGame() {
-    updateStatusBarText('You lost the game. Start again!');
-}
+    updateStatusBarText('You lost the game. Start again!', true);
+};
