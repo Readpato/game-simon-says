@@ -41,11 +41,11 @@ The good thing, is that no matter what coding challenge you have ahead if you sp
 
 The game is pretty straightforward. The machine is going to highlight a box and the user simply has to select the same one that the machine chose. The status bar will show if it's the user or the computer turn.
 
--add image1-
+<img  src="https://github.com/Readpato/game-simon-says/blob/main/readme-images/simon-says-image-1.PNG" align="center">
 
 When the user fails the sequence that the machine has stored, then the game ends and the status bar will update that a new game needs to be started to continue playing.
 
--add image2-
+<img  src="https://github.com/Readpato/game-simon-says/blob/main/readme-images/simon-says-image-2.PNG" align="center">
 
 #
 
