@@ -17,5 +17,15 @@ context("Simon Says game ", () => {
         "The game hasn't started yet! Press Play!"
       );
     });
+
+    it("Test if round counter has loaded correctly", () => {
+      cy.get(".round-counter").should("contain", "Round: #0");
+    });
+
+    it("Test if start game button has been loaded correctly", () => {
+      cy.get(".start-game-button")
+        .should("have.css", "background-color", "rgb(173, 230, 187)")
+        .and("contain", "Play!");
+    });
   });
 });
