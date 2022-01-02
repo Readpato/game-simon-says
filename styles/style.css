@@ -17,26 +17,26 @@
   color: black;
 }
 
-.game-interface .column {
+.game-board .column {
   height: 30vh;
   opacity: 0.5;
   -webkit-transition: opacity ease-in-out 500ms;
   transition: opacity ease-in-out 500ms;
 }
 
-.game-interface .color-red {
+.game-board .color-red {
   background-color: #ed5c4e;
 }
 
-.game-interface .color-green {
+.game-board .color-green {
   background-color: #4eedac;
 }
 
-.game-interface .color-blue {
+.game-board .color-blue {
   background-color: #4e90ed;
 }
 
-.game-interface .color-yellow {
+.game-board .color-yellow {
   background-color: #ede44e;
 }
 

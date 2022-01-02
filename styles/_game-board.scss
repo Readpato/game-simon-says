@@ -1,0 +1,20 @@
+.game-board {
+  .column {
+    height: 30vh;
+    opacity: 0.5;
+    transition: opacity ease-in-out 500ms;
+  }
+
+  .color-red {
+    background-color: $colorRed;
+  }
+  .color-green {
+    background-color: $colorGreen;
+  }
+  .color-blue {
+    background-color: $colorBlue;
+  }
+  .color-yellow {
+    background-color: $colorYellow;
+  }
+}
