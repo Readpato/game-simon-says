@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-const URL = "http://192.168.0.134:8080";
+const URL = "http://192.168.1.5:8080";
 
 context("Simon Says game ", () => {
   before(() => {
@@ -26,6 +26,21 @@ context("Simon Says game ", () => {
       cy.get(".start-game-button")
         .should("have.css", "background-color", "rgb(173, 230, 187)")
         .and("contain", "Play!");
+    });
+
+    it("Test if the box colors have been loaded correctly", () => {
+      cy.get(".color-box")
+        .eq(0)
+        .should("have.css", "background-color", "rgb(237, 92, 78)");
+      cy.get(".color-box")
+        .eq(1)
+        .should("have.css", "background-color", "rgb(78, 237, 172)");
+      cy.get(".color-box")
+        .eq(2)
+        .should("have.css", "background-color", "rgb(78, 144, 237)");
+      cy.get(".color-box")
+        .eq(3)
+        .should("have.css", "background-color", "rgb(237, 228, 78)");
     });
   });
 });
